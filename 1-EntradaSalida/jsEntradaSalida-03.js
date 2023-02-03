@@ -1,12 +1,35 @@
-/*
-Debemos lograr tomar un dato por 'ID'
-y luego mostrarlo por 'Alert' al presionar el botón  'mostrar'*/
+/* Lucas Ramón Div D.
+Se ingresará por id el valor de una compra de productos para el hogar. 
+Se deberá agregar el iva (21%) y  luego se deberá restar el 5% en concepto de compra mayorista. 
+El programa deberá mostrar por alert importe bruto, el iva, el importe con iva, 
+el valor del descuento y el total a pagar.*/
+
+
 function mostrar() {
-	let nombre;
+	let valorDeProducto;
+	let iva;
+	let descuento;
+	let sumaIva;
+	let restaDescuento;
+	let total;
 
-	nombre = document.getElementById("txtIdNombre").value
 
-	alert(nombre)
+	valorDeProducto = document.getElementById("txtIdNombre").value;
+	valorDeProducto = parseFloat(valorDeProducto);
+
+	iva = valorDeProducto * 21 / 100;
+
+	sumaIva = valorDeProducto + iva;
+
+	descuento = sumaIva * -5 / 100;
+
+	restaDescuento = valorDeProducto - descuento;
+
+	total = sumaIva + descuento;
+
+
+
+	alert(" Valor del producto:" + valorDeProducto + " Iva del 21%:" + sumaIva + " Descuento del 5%:" + descuento + " Total a pagar:" + total)
 
 
 }
